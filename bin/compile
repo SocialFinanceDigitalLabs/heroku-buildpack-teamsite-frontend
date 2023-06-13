@@ -64,6 +64,10 @@ echo "" > "$LOG_FILE"
 
 build_start_time=$(nowms)
 
+# Run in application folder
+BUILD_DIR="${BUILD_DIR}/frontend"
+export PATH="$BUILD_DIR/.heroku/node/bin:$BUILD_DIR/.heroku/yarn/bin":$PATH
+
 ### Handle errors
 
 handle_failure() {
